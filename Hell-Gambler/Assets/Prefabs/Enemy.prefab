@@ -13,8 +13,9 @@ GameObject:
   - component: {fileID: 2480410191476553307}
   - component: {fileID: 6437659919298905073}
   - component: {fileID: -8273642316033151761}
-  - component: {fileID: 6858549481232721293}
   - component: {fileID: 1095599447974310691}
+  - component: {fileID: -6161320284628338923}
+  - component: {fileID: 6858549481232721293}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Untagged
@@ -4887,29 +4888,6 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 4
     vectorLabel1_3: W
---- !u!114 &6858549481232721293
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3269046680733844234}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8c64afb9e98732742ad583107cdff07c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  rigidBody: {fileID: 6437659919298905073}
-  player: {fileID: 0}
-  heartManager: {fileID: 0}
-  particles: {fileID: -8273642316033151761}
-  topSpeed: 1.5
-  friction: 0.9
-  damage: 1
-  attackRange: 1.25
-  attackCooldown: 2
-  cooldownTimer: 0
-  Angle: 0
 --- !u!199 &1095599447974310691
 ParticleSystemRenderer:
   serializedVersion: 6
@@ -4987,3 +4965,40 @@ ParticleSystemRenderer:
   m_MeshWeighting2: 1
   m_MeshWeighting3: 1
   m_MaskInteraction: 0
+--- !u!114 &-6161320284628338923
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3269046680733844234}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 42c84c1760eda2a49917a83d84463f6e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rigidBody: {fileID: 6437659919298905073}
+  topSpeed: 1.5
+  friction: 0.9
+--- !u!114 &6858549481232721293
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3269046680733844234}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8c64afb9e98732742ad583107cdff07c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rigidBody: {fileID: 6437659919298905073}
+  player: {fileID: 0}
+  heartManager: {fileID: 0}
+  particles: {fileID: -8273642316033151761}
+  topSpeed: 1.5
+  friction: 0.9
+  damage: 1
+  attackRange: 1.25
+  attackCooldown: 2
+  cooldownTimer: 0

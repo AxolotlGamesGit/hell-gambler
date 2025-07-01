@@ -4,12 +4,13 @@ using System.Xml.Serialization;
 using UnityEngine;
 using UnityEngine.Events;
 
-public class HeartManager : MonoBehaviour {
+public class Health : MonoBehaviour {
   [SerializeField] Heart heart;
+  [SerializeField] Transform parent;
 
   [SerializeField] int maxHealth = 10;
-  public int Health = 10;
-  public UnityEvent GameOver;
+  public int CurrentHealth { get; private set; }
+  public UnityEvent OnDeath;
 
   [SerializeField] Vector3 startingLocation = new Vector3(-40, -50, 0);
   [SerializeField] float xOffset = 1;
@@ -17,9 +18,9 @@ public class HeartManager : MonoBehaviour {
   private List<Heart> hearts;
 
   public void AddHealth(int health) {
-    Health += health;
+    CurrentHealth += health;
     if (health < 0) {
-      GameOver.Invoke();
+      OnDeath.Invoke();
     }
     DisplayHealth();
   }
@@ -29,7 +30,7 @@ public class HeartManager : MonoBehaviour {
       if (i + 1 > maxHealth) {
         hearts[i].status = Status.empty;
       }
-      else if (i + 1 > Health) {
+      else if (i + 1 > CurrentHealth) {
         hearts[i].status = Status.dead;
       }
       else {
@@ -39,16 +40,18 @@ public class HeartManager : MonoBehaviour {
   }
 
   void Awake() {
-    if (GameOver == null) {
-      GameOver = new UnityEvent();
+    if (OnDeath == null) {
+      OnDeath = new UnityEvent();
     }
 
     hearts = new List<Heart>();
     Vector3 currentLocation = startingLocation;
     for (int i = 0; i < maxHealth; i++) {
-      hearts.Add(GameObject.Instantiate<Heart>(heart, currentLocation, new Quaternion(), transform));
+      hearts.Add(GameObject.Instantiate<Heart>(heart, currentLocation, new Quaternion(), parent));
       currentLocation.x += xOffset;
     }
+
+    CurrentHealth = maxHealth;
   }
 
   void Start() {

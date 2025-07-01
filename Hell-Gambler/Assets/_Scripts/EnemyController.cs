@@ -5,7 +5,7 @@ using UnityEngine;
 public class EnemyController : MonoBehaviour, IMovementInput {
   [SerializeField] Rigidbody2D rigidBody;
   [SerializeField] GameObject player;
-  [SerializeField] HeartManager heartManager;
+  [SerializeField] Health playerHealth;
   [SerializeField] ParticleSystem particles;
 
   [SerializeField] float topSpeed = 3.0f;
@@ -48,7 +48,7 @@ public class EnemyController : MonoBehaviour, IMovementInput {
 
   private void Attack() {
     cooldownTimer = cooldownTimer % attackCooldown;
-    heartManager.AddHealth(damage * -1);
+    playerHealth.AddHealth(damage * -1);
     particles.Play();
   }
 

@@ -9,7 +9,7 @@ public enum Status {
 }
 
 public class Heart : MonoBehaviour {
-  [SerializeField] Image image;
+  [SerializeField] SpriteRenderer spriteRenderer;
   [SerializeField] Sprite alive;
   [SerializeField] Sprite dead;
   [SerializeField] Sprite empty;
@@ -19,13 +19,13 @@ public class Heart : MonoBehaviour {
   private void Update() {
     switch (status) {
       case Status.alive:
-        image.sprite = alive;
+        spriteRenderer.sprite = alive;
         break;
       case Status.dead:
-        image.sprite = dead;
+        spriteRenderer.sprite = dead;
         break;
       case Status.empty:
-        image.sprite = empty;
+        spriteRenderer.sprite = empty;
         break;
     }
   }

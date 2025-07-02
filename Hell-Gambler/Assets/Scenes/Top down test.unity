@@ -171,7 +171,7 @@ GameObject:
   - component: {fileID: 300967709}
   - component: {fileID: 300967708}
   m_Layer: 0
-  m_Name: Platform (1)
+  m_Name: Wall (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -446,7 +446,7 @@ Transform:
   m_GameObject: {fileID: 368010533}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.46846765, y: 2.0698116, z: -0.2524991}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -465,7 +465,7 @@ GameObject:
   - component: {fileID: 445753550}
   - component: {fileID: 445753549}
   m_Layer: 0
-  m_Name: Platform (4)
+  m_Name: Wall (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -627,7 +627,7 @@ GameObject:
   - component: {fileID: 448388276}
   - component: {fileID: 448388275}
   m_Layer: 0
-  m_Name: Platform (3)
+  m_Name: Wall (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1152,7 +1152,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1165520322}
   m_Layer: 0
-  m_Name: Platforms
+  m_Name: Walls
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1174,8 +1174,8 @@ Transform:
   - {fileID: 1343352339}
   - {fileID: 300967707}
   - {fileID: 1792759095}
-  - {fileID: 445753548}
   - {fileID: 448388274}
+  - {fileID: 445753548}
   m_Father: {fileID: 681997994}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1186460597
@@ -1265,7 +1265,7 @@ GameObject:
   - component: {fileID: 1343352341}
   - component: {fileID: 1343352340}
   m_Layer: 0
-  m_Name: Platform
+  m_Name: Wall (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1644,7 +1644,7 @@ GameObject:
   - component: {fileID: 1792759097}
   - component: {fileID: 1792759096}
   m_Layer: 0
-  m_Name: Platform (2)
+  m_Name: Wall (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2134,10 +2134,6 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 1675633896}
-    - target: {fileID: 6858549481232721293, guid: bf667a9ae8739ad418782dadaec27eee, type: 3}
-      propertyPath: heartManager
-      value: 
-      objectReference: {fileID: 0}
     - target: {fileID: 6858549481232721293, guid: bf667a9ae8739ad418782dadaec27eee, type: 3}
       propertyPath: playerHealth
       value: 

@@ -47,7 +47,7 @@ public class Health : MonoBehaviour {
     hearts = new List<Heart>();
     Vector3 currentLocation = startingLocation;
     for (int i = 0; i < maxHealth; i++) {
-      hearts.Add(GameObject.Instantiate<Heart>(heart, currentLocation, new Quaternion(), parent));
+      hearts.Add(GameObject.Instantiate<Heart>(heart, parent.position + currentLocation, new Quaternion(), parent));
       currentLocation.x += xOffset;
     }
 

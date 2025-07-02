@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 1095599447974310691}
   - component: {fileID: -6161320284628338923}
   - component: {fileID: 6858549481232721293}
+  - component: {fileID: 6463754052082515696}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Untagged
@@ -4994,7 +4995,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rigidBody: {fileID: 6437659919298905073}
   player: {fileID: 0}
-  heartManager: {fileID: 0}
+  playerHealth: {fileID: 0}
   particles: {fileID: -8273642316033151761}
   topSpeed: 1.5
   friction: 0.9
@@ -5002,3 +5003,23 @@ MonoBehaviour:
   attackRange: 1.25
   attackCooldown: 2
   cooldownTimer: 0
+--- !u!114 &6463754052082515696
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3269046680733844234}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0926e250803eab34db0d7065aa2b5f4a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  heart: {fileID: 7439134610791248157, guid: 54fdfd8c5cb5b3f4495e4857c65b825b, type: 3}
+  parent: {fileID: 5344487540959916364}
+  maxHealth: 2
+  OnDeath:
+    m_PersistentCalls:
+      m_Calls: []
+  startingLocation: {x: -0.2, y: 0.75, z: 0}
+  xOffset: 0.4

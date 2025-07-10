@@ -1,0 +1,15 @@
+[gd_resource type="Resource" load_steps=3 format=3 uid="uid://wc34pgv3ta04"]
+
+[ext_resource type="Script" uid="uid://dhmpqb125gctb" path="res://Scripts/Attack/MeleeAttackStats.cs" id="1_tqbqj"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6l362"]
+size = Vector2(21.72, 313.755)
+
+[resource]
+script = ExtResource("1_tqbqj")
+Effects = []
+Hitboxes = [SubResource("RectangleShape2D_6l362")]
+Damage = 1
+Cooldown = 2.0
+DurationMilliseconds = 1000
+MilisecondStartDelay = 0

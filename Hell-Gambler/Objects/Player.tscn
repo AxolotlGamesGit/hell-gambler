@@ -1,0 +1,34 @@
+[gd_scene load_steps=7 format=3 uid="uid://c5ik1k3dp0m82"]
+
+[ext_resource type="Script" uid="uid://dt5ad58jxccye" path="res://Scripts/Movement.cs" id="1_n6db0"]
+[ext_resource type="Script" uid="uid://by76hqpkvgfe7" path="res://Scripts/Input/PlayerInput.cs" id="1_yk4ok"]
+[ext_resource type="Texture2D" uid="uid://btqtaxli3wyxa" path="res://icon.svg" id="2_yk4ok"]
+[ext_resource type="Script" uid="uid://cbdhm2ya6vp4c" path="res://Scripts/Attack/MeleeAttack.cs" id="4_u60sl"]
+[ext_resource type="Resource" uid="uid://dli6bxdstjllt" path="res://Resources/MeleeAttackStats/SwordAttack.tres" id="5_t1tke"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_n6db0"]
+size = Vector2(125, 125)
+
+[node name="CharacterBody2D" type="CharacterBody2D"]
+
+[node name="Input" type="Node" parent="." node_paths=PackedStringArray("meleeAttackNode")]
+script = ExtResource("1_yk4ok")
+meleeAttackNode = NodePath("../Attack")
+
+[node name="Movement" type="Node" parent="." node_paths=PackedStringArray("characterBody", "inputNode")]
+script = ExtResource("1_n6db0")
+characterBody = NodePath("..")
+inputNode = NodePath("../Input")
+topSpeed = 200.0
+friction = 0.8
+
+[node name="Attack" type="Node" parent="." node_paths=PackedStringArray("parent")]
+script = ExtResource("4_u60sl")
+stats = ExtResource("5_t1tke")
+parent = NodePath("..")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_yk4ok")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_n6db0")

@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://bcts5h260j8rt"]
+
+[ext_resource type="Script" uid="uid://bf21dufdc6e3r" path="res://Scripts/Attack/AttackHitbox.cs" id="1_b68gj"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_b68gj"]
+size = Vector2(1, 1)
+
+[node name="Area2D" type="Area2D"]
+scale = Vector2(1.00263, 1.09142)
+collision_layer = 255
+collision_mask = 255
+script = ExtResource("1_b68gj")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_b68gj")
+disabled = true

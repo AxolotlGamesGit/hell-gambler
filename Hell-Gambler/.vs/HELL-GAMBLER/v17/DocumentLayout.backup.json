@@ -3,6 +3,14 @@
   "WorkspaceRootPath": "C:\\Users\\h\\OneDrive\\Documents\\hell-gambler\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{9C1277AB-2F74-44BC-A26E-777C2C2F8E47}|Hell-Gambler.csproj|c:\\users\\h\\onedrive\\documents\\hell-gambler\\scripts\\health.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9C1277AB-2F74-44BC-A26E-777C2C2F8E47}|Hell-Gambler.csproj|solutionrelative:scripts\\health.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9C1277AB-2F74-44BC-A26E-777C2C2F8E47}|Hell-Gambler.csproj|c:\\users\\h\\onedrive\\documents\\hell-gambler\\scripts\\heart.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9C1277AB-2F74-44BC-A26E-777C2C2F8E47}|Hell-Gambler.csproj|solutionrelative:scripts\\heart.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{9C1277AB-2F74-44BC-A26E-777C2C2F8E47}|Hell-Gambler.csproj|c:\\users\\h\\onedrive\\documents\\hell-gambler\\scripts\\attack\\attackhitbox.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{9C1277AB-2F74-44BC-A26E-777C2C2F8E47}|Hell-Gambler.csproj|solutionrelative:scripts\\attack\\attackhitbox.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -11,20 +19,20 @@
       "RelativeMoniker": "D:0:0:{9C1277AB-2F74-44BC-A26E-777C2C2F8E47}|Hell-Gambler.csproj|solutionrelative:scripts\\attack\\meleeattack.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{9C1277AB-2F74-44BC-A26E-777C2C2F8E47}|Hell-Gambler.csproj|c:\\users\\h\\onedrive\\documents\\hell-gambler\\scripts\\attack\\iattack.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{9C1277AB-2F74-44BC-A26E-777C2C2F8E47}|Hell-Gambler.csproj|solutionrelative:scripts\\attack\\iattack.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{9C1277AB-2F74-44BC-A26E-777C2C2F8E47}|Hell-Gambler.csproj|c:\\users\\h\\onedrive\\documents\\hell-gambler\\scripts\\input\\playerinput.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{9C1277AB-2F74-44BC-A26E-777C2C2F8E47}|Hell-Gambler.csproj|solutionrelative:scripts\\input\\playerinput.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{9C1277AB-2F74-44BC-A26E-777C2C2F8E47}|Hell-Gambler.csproj|c:\\users\\h\\onedrive\\documents\\hell-gambler\\scripts\\input\\enemyinput.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{9C1277AB-2F74-44BC-A26E-777C2C2F8E47}|Hell-Gambler.csproj|solutionrelative:scripts\\input\\enemyinput.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{9C1277AB-2F74-44BC-A26E-777C2C2F8E47}|Hell-Gambler.csproj|c:\\users\\h\\onedrive\\documents\\hell-gambler\\scripts\\movement.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{9C1277AB-2F74-44BC-A26E-777C2C2F8E47}|Hell-Gambler.csproj|solutionrelative:scripts\\movement.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9C1277AB-2F74-44BC-A26E-777C2C2F8E47}|Hell-Gambler.csproj|c:\\users\\h\\onedrive\\documents\\hell-gambler\\scripts\\attack\\iattack.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9C1277AB-2F74-44BC-A26E-777C2C2F8E47}|Hell-Gambler.csproj|solutionrelative:scripts\\attack\\iattack.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9C1277AB-2F74-44BC-A26E-777C2C2F8E47}|Hell-Gambler.csproj|c:\\users\\h\\onedrive\\documents\\hell-gambler\\scripts\\input\\enemyinput.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9C1277AB-2F74-44BC-A26E-777C2C2F8E47}|Hell-Gambler.csproj|solutionrelative:scripts\\input\\enemyinput.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -34,8 +42,34 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 4,
+          "SelectedChildIndex": 1,
           "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Heart.cs",
+              "DocumentMoniker": "C:\\Users\\h\\OneDrive\\Documents\\hell-gambler\\Scripts\\Heart.cs",
+              "RelativeDocumentMoniker": "Scripts\\Heart.cs",
+              "ToolTip": "C:\\Users\\h\\OneDrive\\Documents\\hell-gambler\\Scripts\\Heart.cs",
+              "RelativeToolTip": "Scripts\\Heart.cs",
+              "ViewState": "AgIAAAoAAAAAAAAAAAAgwCkAAAAdAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-10T20:33:37.646Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Health.cs",
+              "DocumentMoniker": "C:\\Users\\h\\OneDrive\\Documents\\hell-gambler\\Scripts\\Health.cs",
+              "RelativeDocumentMoniker": "Scripts\\Health.cs",
+              "ToolTip": "C:\\Users\\h\\OneDrive\\Documents\\hell-gambler\\Scripts\\Health.cs",
+              "RelativeToolTip": "Scripts\\Health.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAA4AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-10T20:29:59.127Z",
+              "EditorCaption": ""
+            },
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
@@ -48,14 +82,14 @@
               "RelativeDocumentMoniker": "Scripts\\Movement.cs",
               "ToolTip": "C:\\Users\\h\\OneDrive\\Documents\\hell-gambler\\Scripts\\Movement.cs",
               "RelativeToolTip": "Scripts\\Movement.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAaAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB4AAAA2AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-07-09T21:15:42.429Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 7,
               "Title": "EnemyInput.cs",
               "DocumentMoniker": "C:\\Users\\h\\OneDrive\\Documents\\hell-gambler\\Scripts\\Input\\EnemyInput.cs",
               "RelativeDocumentMoniker": "Scripts\\Input\\EnemyInput.cs",
@@ -68,7 +102,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 4,
               "Title": "PlayerInput.cs",
               "DocumentMoniker": "C:\\Users\\h\\OneDrive\\Documents\\hell-gambler\\Scripts\\Input\\PlayerInput.cs",
               "RelativeDocumentMoniker": "Scripts\\Input\\PlayerInput.cs",
@@ -81,20 +115,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 2,
               "Title": "AttackHitbox.cs",
               "DocumentMoniker": "C:\\Users\\h\\OneDrive\\Documents\\hell-gambler\\Scripts\\Attack\\AttackHitbox.cs",
               "RelativeDocumentMoniker": "Scripts\\Attack\\AttackHitbox.cs",
               "ToolTip": "C:\\Users\\h\\OneDrive\\Documents\\hell-gambler\\Scripts\\Attack\\AttackHitbox.cs",
               "RelativeToolTip": "Scripts\\Attack\\AttackHitbox.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAArAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-07-08T19:05:58.851Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 3,
               "Title": "MeleeAttack.cs",
               "DocumentMoniker": "C:\\Users\\h\\OneDrive\\Documents\\hell-gambler\\Scripts\\Attack\\MeleeAttack.cs",
               "RelativeDocumentMoniker": "Scripts\\Attack\\MeleeAttack.cs",
@@ -107,7 +141,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 6,
               "Title": "IAttack.cs",
               "DocumentMoniker": "C:\\Users\\h\\OneDrive\\Documents\\hell-gambler\\Scripts\\Attack\\IAttack.cs",
               "RelativeDocumentMoniker": "Scripts\\Attack\\IAttack.cs",

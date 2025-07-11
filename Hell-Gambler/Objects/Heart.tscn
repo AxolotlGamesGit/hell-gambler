@@ -1,0 +1,16 @@
+[gd_scene load_steps=5 format=3 uid="uid://dvpe50xlsg6eu"]
+
+[ext_resource type="Script" uid="uid://dj0lcung6faye" path="res://Scripts/Heart.cs" id="1_eiopt"]
+[ext_resource type="Texture2D" uid="uid://btqtaxli3wyxa" path="res://Textures/icon.svg" id="2_ypamo"]
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_glu3v"]
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_8a684"]
+
+[node name="Sprite2D" type="Sprite2D" node_paths=PackedStringArray("sprite")]
+texture = ExtResource("2_ypamo")
+script = ExtResource("1_eiopt")
+sprite = NodePath(".")
+alive = ExtResource("2_ypamo")
+dead = SubResource("PlaceholderTexture2D_glu3v")
+empty = SubResource("PlaceholderTexture2D_8a684")

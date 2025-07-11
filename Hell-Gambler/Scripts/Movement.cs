@@ -20,6 +20,8 @@ public partial class Movement : Node {
     }
 
     input = (IMovementInput) inputNode;
+
+    characterBody.PlatformFloorLayers = new();
   }
 
   public override void _Ready() {
@@ -41,6 +43,6 @@ public partial class Movement : Node {
     _velocity += moveInput * acceleration;
     _velocity *= friction;
     characterBody.Velocity = _velocity;
-    characterBody.MoveAndCollide(_velocity * (float)delta);
+    characterBody.MoveAndSlide();
   }
 }

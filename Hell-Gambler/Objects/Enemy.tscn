@@ -1,8 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://cnfmahu3y8tvr"]
+[gd_scene load_steps=7 format=3 uid="uid://cnfmahu3y8tvr"]
 
 [ext_resource type="Script" uid="uid://dcrg1y8nf2x0u" path="res://Scripts/Input/EnemyInput.cs" id="1_44n8p"]
 [ext_resource type="Script" uid="uid://dt5ad58jxccye" path="res://Scripts/Movement.cs" id="2_8ks7m"]
-[ext_resource type="Texture2D" uid="uid://btqtaxli3wyxa" path="res://icon.svg" id="3_a5uau"]
+[ext_resource type="Texture2D" uid="uid://btqtaxli3wyxa" path="res://Textures/icon.svg" id="3_a5uau"]
+[ext_resource type="Script" uid="uid://vwa0ctqwpu11" path="res://Scripts/Health.cs" id="3_v6vhh"]
+[ext_resource type="PackedScene" uid="uid://dvpe50xlsg6eu" path="res://Objects/Heart.tscn" id="4_3dc2f"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_n6db0"]
 size = Vector2(120, 120)
@@ -21,6 +23,15 @@ characterBody = NodePath("..")
 inputNode = NodePath("../Input")
 topSpeed = 100.0
 friction = 0.8
+
+[node name="Health" type="Node" parent="." node_paths=PackedStringArray("parent")]
+unique_name_in_owner = true
+script = ExtResource("3_v6vhh")
+heart = ExtResource("4_3dc2f")
+parent = NodePath("..")
+maxHealth = 2
+startingLocation = Vector2(-22.5, -55)
+xOffset = 45.0
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("3_a5uau")

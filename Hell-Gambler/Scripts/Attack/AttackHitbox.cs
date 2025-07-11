@@ -4,12 +4,18 @@ using System.Collections.Generic;
 using static Godot.PhysicsServer3D;
 
 public partial class AttackHitbox : Area2D {
-  [Export] bool DamagesPlayer = false;
+  [Export] public int Damage = 1;
+  [Export] public bool DamagesPlayer = false;
   private List<Node2D> _bodies = new();
 
   public void Attack() {
     foreach (Node2D body in _bodies) {
-      GD.Print("Damaged");
+      if (body.HasNode("%Health")) {
+        if (DamagesPlayer || body.HasNode("%PlayerInput") == false) {
+          Health health = body.GetNode<Health>("%Health");
+          health.AddHealth(-1 * Damage);
+        }
+      }
     }
   }
 

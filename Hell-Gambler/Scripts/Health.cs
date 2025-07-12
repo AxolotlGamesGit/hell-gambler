@@ -24,7 +24,9 @@ public partial class Health : Node {
     DisplayHealth();
 
     if (health < 0) {
-      OnDeath.Invoke(this, new());
+      if (OnDeath != null) {
+        OnDeath.Invoke(this, new());
+      }
     }
   }
 
@@ -60,9 +62,5 @@ public partial class Health : Node {
 
   public override void _Ready() {
     DisplayHealth();
-  }
-
-  public override void _Process(double delta) {
-    //DisplayHealth();
   }
 }

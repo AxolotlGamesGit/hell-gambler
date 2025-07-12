@@ -16,7 +16,7 @@ size = Vector2(125, 125)
 [node name="PlayerInput" type="Node" parent="." node_paths=PackedStringArray("meleeAttackNode")]
 unique_name_in_owner = true
 script = ExtResource("1_yk4ok")
-meleeAttackNode = NodePath("../Attack")
+meleeAttackNode = NodePath("../MeleeAttack")
 
 [node name="Movement" type="Node" parent="." node_paths=PackedStringArray("characterBody", "inputNode")]
 script = ExtResource("1_n6db0")
@@ -25,10 +25,11 @@ inputNode = NodePath("../PlayerInput")
 topSpeed = 200.0
 friction = 0.8
 
-[node name="Attack" type="Node" parent="." node_paths=PackedStringArray("parent")]
+[node name="MeleeAttack" type="Node" parent="." node_paths=PackedStringArray("parent")]
 script = ExtResource("4_u60sl")
 stats = ExtResource("5_t1tke")
 parent = NodePath("..")
+followParent = true
 
 [node name="Health" type="Node" parent="." node_paths=PackedStringArray("parent")]
 unique_name_in_owner = true

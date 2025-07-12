@@ -2,15 +2,14 @@
 
 [ext_resource type="Script" uid="uid://dcrg1y8nf2x0u" path="res://Scripts/Input/EnemyInput.cs" id="1_44n8p"]
 [ext_resource type="Script" uid="uid://dt5ad58jxccye" path="res://Scripts/Movement.cs" id="2_8ks7m"]
-[ext_resource type="Texture2D" uid="uid://btqtaxli3wyxa" path="res://Textures/icon.svg" id="3_a5uau"]
 [ext_resource type="Script" uid="uid://vwa0ctqwpu11" path="res://Scripts/Health.cs" id="3_v6vhh"]
 [ext_resource type="PackedScene" uid="uid://dvpe50xlsg6eu" path="res://Objects/Heart.tscn" id="4_3dc2f"]
+[ext_resource type="Texture2D" uid="uid://btqtaxli3wyxa" path="res://Textures/icon.svg" id="5_a5uau"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_n6db0"]
 size = Vector2(120, 120)
 
 [node name="CharacterBody2D" type="CharacterBody2D"]
-modulate = Color(1, 0, 0, 1)
 scale = Vector2(0.5, 0.5)
 
 [node name="Input" type="Node" parent="." node_paths=PackedStringArray("self")]
@@ -34,7 +33,8 @@ startingLocation = Vector2(-22.5, -55)
 xOffset = 45.0
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("3_a5uau")
+modulate = Color(1, 0, 0, 1)
+texture = ExtResource("5_a5uau")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_n6db0")

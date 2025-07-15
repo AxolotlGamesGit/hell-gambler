@@ -12,5 +12,13 @@ position = Vector2(4, 4)
 unique_name_in_owner = true
 scale = Vector2(0.5, 0.5)
 
-[node name="Enemy" parent="." instance=ExtResource("2_gl6un")]
+[node name="Enemies" type="Node" parent="."]
+
+[node name="Enemy" parent="Enemies" instance=ExtResource("2_gl6un")]
 position = Vector2(-171, -41)
+
+[node name="Enemy2" parent="Enemies" instance=ExtResource("2_gl6un")]
+position = Vector2(-403, 98)
+
+[node name="Enemy3" parent="Enemies" instance=ExtResource("2_gl6un")]
+position = Vector2(-439, -217)

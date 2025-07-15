@@ -3,30 +3,31 @@ using System;
 using System.Collections.Generic;
 
 public partial class Health : Node {
+  [Export] public int CurrentHealth { get; private set; }
+  public event Action OnDeath;
+
   [ExportGroup("References")]
   [Export] PackedScene heart;
   [Export] Node parent;
 
-  [ExportGroup("Parameters")]
+  [ExportGroup("Behavior")]
   [Export] int maxHealth = 10;
+  [Export] bool destroyOnDeath = true;
+
+  [ExportGroup("SpawningParameters")]
   [Export] Vector2 startingLocation = new Vector2(0, -55);
   [Export] float xOffset = 20;
   [Export] float size = 0.4f;
   [Export] bool followParent = true;
 
-  [Export] public int CurrentHealth { get; private set; }
-  public event EventHandler OnDeath;
-
   private List<Heart> _hearts;
 
-  public void AddHealth(int health) {
-    CurrentHealth += health;
+  public void Damage(int damage) {
+    CurrentHealth -= damage;
     DisplayHealth();
 
-    if (health < 0) {
-      if (OnDeath != null) {
-        OnDeath.Invoke(this, new());
-      }
+    if (CurrentHealth <= 0) {
+      OnDeath?.Invoke();
     }
   }
 
@@ -52,7 +53,7 @@ public partial class Health : Node {
       _heart.RelativePosition = _currentLocation;
       _heart.Scale = new Vector2(size, size);
       _heart.FollowParent = followParent;
-      parent.CallDeferred("add_child", _heart);
+      this.CallDeferred("add_child", _heart);
       _hearts.Add(_heart);
       _currentLocation.X += xOffset;
     }
@@ -62,5 +63,9 @@ public partial class Health : Node {
 
   public override void _Ready() {
     DisplayHealth();
+
+    if (destroyOnDeath) { 
+      OnDeath += parent.Free;
+    }
   }
 }

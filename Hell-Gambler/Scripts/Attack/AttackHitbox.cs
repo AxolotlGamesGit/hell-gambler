@@ -1,6 +1,7 @@
 using Godot;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using static Godot.PhysicsServer3D;
 
 public partial class AttackHitbox : Area2D {
@@ -8,13 +9,22 @@ public partial class AttackHitbox : Area2D {
   [Export] public bool DamagesPlayer = false;
   private List<Node2D> _bodies = new();
 
+  private void AttackBody(Node2D body) {
+    if (body.HasNode("%Health")) {
+      if (DamagesPlayer ^ body.HasNode("%PlayerInput") == false) {
+        Health health = body.GetNode<Health>("%Health");
+        health.Damage(Damage);
+      }
+    }
+  }
+
   public void Attack() {
-    foreach (Node2D body in _bodies) {
-      if (body.HasNode("%Health")) {
-        if (DamagesPlayer || body.HasNode("%PlayerInput") == false) {
-          Health health = body.GetNode<Health>("%Health");
-          health.AddHealth(-1 * Damage);
-        }
+    for (int i = _bodies.Count - 1; i > 0; i--) {
+      if (_bodies[i] != null) {
+        AttackBody(_bodies[i]);
+      }
+      else {
+        _bodies.Remove(_bodies[i]);
       }
     }
   }

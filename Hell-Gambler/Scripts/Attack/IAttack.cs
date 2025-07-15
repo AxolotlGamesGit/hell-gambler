@@ -1,4 +1,6 @@
+using System.Threading.Tasks;
+
 public interface IAttack {
   public bool CanAttack();
-  public void TryAttack(float direction);
+  public async Task TryAttack(float direction) { }
 }

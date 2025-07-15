@@ -3,18 +3,6 @@
   "WorkspaceRootPath": "D:\\_My-Stuff\\Games\\Hell-Gambler\\Hell-Gambler\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{9C1277AB-2F74-44BC-A26E-777C2C2F8E47}|Hell-Gambler.csproj|d:\\_my-stuff\\games\\hell-gambler\\hell-gambler\\scripts\\attack\\meleeattack.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{9C1277AB-2F74-44BC-A26E-777C2C2F8E47}|Hell-Gambler.csproj|solutionrelative:scripts\\attack\\meleeattack.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{9C1277AB-2F74-44BC-A26E-777C2C2F8E47}|Hell-Gambler.csproj|d:\\_my-stuff\\games\\hell-gambler\\hell-gambler\\scripts\\attack\\attackhitbox.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{9C1277AB-2F74-44BC-A26E-777C2C2F8E47}|Hell-Gambler.csproj|solutionrelative:scripts\\attack\\attackhitbox.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{9C1277AB-2F74-44BC-A26E-777C2C2F8E47}|Hell-Gambler.csproj|d:\\_my-stuff\\games\\hell-gambler\\hell-gambler\\scripts\\heart.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{9C1277AB-2F74-44BC-A26E-777C2C2F8E47}|Hell-Gambler.csproj|solutionrelative:scripts\\heart.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{9C1277AB-2F74-44BC-A26E-777C2C2F8E47}|Hell-Gambler.csproj|d:\\_my-stuff\\games\\hell-gambler\\hell-gambler\\scripts\\health.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{9C1277AB-2F74-44BC-A26E-777C2C2F8E47}|Hell-Gambler.csproj|solutionrelative:scripts\\health.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -23,8 +11,8 @@
       "RelativeMoniker": "D:0:0:{9C1277AB-2F74-44BC-A26E-777C2C2F8E47}|Hell-Gambler.csproj|solutionrelative:scripts\\input\\playerinput.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{9C1277AB-2F74-44BC-A26E-777C2C2F8E47}|Hell-Gambler.csproj|d:\\_my-stuff\\games\\hell-gambler\\hell-gambler\\scripts\\attack\\meleeattackstats.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{9C1277AB-2F74-44BC-A26E-777C2C2F8E47}|Hell-Gambler.csproj|solutionrelative:scripts\\attack\\meleeattackstats.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{9C1277AB-2F74-44BC-A26E-777C2C2F8E47}|Hell-Gambler.csproj|d:\\_my-stuff\\games\\hell-gambler\\hell-gambler\\scripts\\attack\\attackhitbox.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9C1277AB-2F74-44BC-A26E-777C2C2F8E47}|Hell-Gambler.csproj|solutionrelative:scripts\\attack\\attackhitbox.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{9C1277AB-2F74-44BC-A26E-777C2C2F8E47}|Hell-Gambler.csproj|d:\\_my-stuff\\games\\hell-gambler\\hell-gambler\\scripts\\input\\enemyinput.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -33,6 +21,14 @@
     {
       "AbsoluteMoniker": "D:0:0:{9C1277AB-2F74-44BC-A26E-777C2C2F8E47}|Hell-Gambler.csproj|d:\\_my-stuff\\games\\hell-gambler\\hell-gambler\\scripts\\attack\\iattack.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{9C1277AB-2F74-44BC-A26E-777C2C2F8E47}|Hell-Gambler.csproj|solutionrelative:scripts\\attack\\iattack.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9C1277AB-2F74-44BC-A26E-777C2C2F8E47}|Hell-Gambler.csproj|d:\\_my-stuff\\games\\hell-gambler\\hell-gambler\\scripts\\vectormath.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9C1277AB-2F74-44BC-A26E-777C2C2F8E47}|Hell-Gambler.csproj|solutionrelative:scripts\\vectormath.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9C1277AB-2F74-44BC-A26E-777C2C2F8E47}|Hell-Gambler.csproj|d:\\_my-stuff\\games\\hell-gambler\\hell-gambler\\scripts\\attack\\meleeattack.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9C1277AB-2F74-44BC-A26E-777C2C2F8E47}|Hell-Gambler.csproj|solutionrelative:scripts\\attack\\meleeattack.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -42,7 +38,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 6,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Bookmark",
@@ -50,106 +46,93 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "Heart.cs",
-              "DocumentMoniker": "D:\\_My-Stuff\\Games\\Hell-Gambler\\Hell-Gambler\\Scripts\\Heart.cs",
-              "RelativeDocumentMoniker": "Scripts\\Heart.cs",
-              "ToolTip": "D:\\_My-Stuff\\Games\\Hell-Gambler\\Hell-Gambler\\Scripts\\Heart.cs",
-              "RelativeToolTip": "Scripts\\Heart.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAACkAAAAdAAAAAAAAAA==",
+              "DocumentIndex": 5,
+              "Title": "VectorMath.cs",
+              "DocumentMoniker": "D:\\_My-Stuff\\Games\\Hell-Gambler\\Hell-Gambler\\Scripts\\VectorMath.cs",
+              "RelativeDocumentMoniker": "Scripts\\VectorMath.cs",
+              "ToolTip": "D:\\_My-Stuff\\Games\\Hell-Gambler\\Hell-Gambler\\Scripts\\VectorMath.cs",
+              "RelativeToolTip": "Scripts\\VectorMath.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAUAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-10T20:33:37.646Z",
+              "WhenOpened": "2025-07-15T17:34:33.998Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 0,
               "Title": "Health.cs",
               "DocumentMoniker": "D:\\_My-Stuff\\Games\\Hell-Gambler\\Hell-Gambler\\Scripts\\Health.cs",
               "RelativeDocumentMoniker": "Scripts\\Health.cs",
               "ToolTip": "D:\\_My-Stuff\\Games\\Hell-Gambler\\Hell-Gambler\\Scripts\\Health.cs",
               "RelativeToolTip": "Scripts\\Health.cs",
-              "ViewState": "AgIAAB4AAAAAAAAAAAAowEAAAAADAAAAAAAAAA==",
+              "ViewState": "AgIAACMAAAAAAAAAAAAwwEMAAAANAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-10T20:29:59.127Z",
+              "WhenOpened": "2025-07-15T17:21:14.208Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 3,
               "Title": "EnemyInput.cs",
               "DocumentMoniker": "D:\\_My-Stuff\\Games\\Hell-Gambler\\Hell-Gambler\\Scripts\\Input\\EnemyInput.cs",
               "RelativeDocumentMoniker": "Scripts\\Input\\EnemyInput.cs",
               "ToolTip": "D:\\_My-Stuff\\Games\\Hell-Gambler\\Hell-Gambler\\Scripts\\Input\\EnemyInput.cs",
               "RelativeToolTip": "Scripts\\Input\\EnemyInput.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAADAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACcAAAAvAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-09T21:14:14.548Z",
+              "WhenOpened": "2025-07-15T17:13:50.307Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 1,
               "Title": "PlayerInput.cs",
               "DocumentMoniker": "D:\\_My-Stuff\\Games\\Hell-Gambler\\Hell-Gambler\\Scripts\\Input\\PlayerInput.cs",
               "RelativeDocumentMoniker": "Scripts\\Input\\PlayerInput.cs",
               "ToolTip": "D:\\_My-Stuff\\Games\\Hell-Gambler\\Hell-Gambler\\Scripts\\Input\\PlayerInput.cs",
               "RelativeToolTip": "Scripts\\Input\\PlayerInput.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABwAAAABAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAZAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-07-09T18:36:09.165Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "AttackHitbox.cs",
               "DocumentMoniker": "D:\\_My-Stuff\\Games\\Hell-Gambler\\Hell-Gambler\\Scripts\\Attack\\AttackHitbox.cs",
               "RelativeDocumentMoniker": "Scripts\\Attack\\AttackHitbox.cs",
               "ToolTip": "D:\\_My-Stuff\\Games\\Hell-Gambler\\Hell-Gambler\\Scripts\\Attack\\AttackHitbox.cs",
               "RelativeToolTip": "Scripts\\Attack\\AttackHitbox.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAJAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAHAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-07-08T19:05:58.851Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 6,
               "Title": "MeleeAttack.cs",
               "DocumentMoniker": "D:\\_My-Stuff\\Games\\Hell-Gambler\\Hell-Gambler\\Scripts\\Attack\\MeleeAttack.cs",
               "RelativeDocumentMoniker": "Scripts\\Attack\\MeleeAttack.cs",
               "ToolTip": "D:\\_My-Stuff\\Games\\Hell-Gambler\\Hell-Gambler\\Scripts\\Attack\\MeleeAttack.cs",
               "RelativeToolTip": "Scripts\\Attack\\MeleeAttack.cs",
-              "ViewState": "AgIAACQAAAAAAAAAAAAowDgAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAUAAAAAAAAAAAAQwB0AAAAVAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-07-08T19:05:23.711Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 4,
               "Title": "IAttack.cs",
               "DocumentMoniker": "D:\\_My-Stuff\\Games\\Hell-Gambler\\Hell-Gambler\\Scripts\\Attack\\IAttack.cs",
               "RelativeDocumentMoniker": "Scripts\\Attack\\IAttack.cs",
               "ToolTip": "D:\\_My-Stuff\\Games\\Hell-Gambler\\Hell-Gambler\\Scripts\\Attack\\IAttack.cs",
               "RelativeToolTip": "Scripts\\Attack\\IAttack.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAyAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-07-08T19:04:51.636Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "MeleeAttackStats.cs",
-              "DocumentMoniker": "D:\\_My-Stuff\\Games\\Hell-Gambler\\Hell-Gambler\\Scripts\\Attack\\MeleeAttackStats.cs",
-              "RelativeDocumentMoniker": "Scripts\\Attack\\MeleeAttackStats.cs",
-              "ToolTip": "D:\\_My-Stuff\\Games\\Hell-Gambler\\Hell-Gambler\\Scripts\\Attack\\MeleeAttackStats.cs",
-              "RelativeToolTip": "Scripts\\Attack\\MeleeAttackStats.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAvAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-12T18:36:24.042Z",
               "EditorCaption": ""
             }
           ]

@@ -1,32 +1,36 @@
 using Godot;
 using System;
-using System.Threading;
+using System.Threading.Tasks;
 
 public partial class MeleeAttack : Node, IAttack {
+  [ExportGroup("References")]
   [Export] MeleeAttackStats stats;
   [Export] Node2D parent;
+
+  [ExportGroup("Parameters")]
   [Export] bool followParent;
+  [Export] bool damagesPlayer;
 
   private float _timeSinceLastAttack;
   private PackedScene _hitboxReference = (PackedScene) ResourceLoader.Load("res://Objects/Hitbox.tscn");
   private AttackHitbox _hitbox;
 
-  void IAttack.TryAttack(float direction) {
+  async Task IAttack.TryAttack(float direction) {
     IAttack self = this;
     if (self.CanAttack() == false) {
       GD.Print($"Can't attack. Time since last attack: {_timeSinceLastAttack}");
       return;
     }
 
+    _timeSinceLastAttack = 0;
     _hitbox.Rotation = direction; // Needs to be before thread.sleep, very sketchy fix, otherwise collision detection will use old rotation value.
 
-    Thread.Sleep((int) (1000 * stats.StartDelay));
+    await Task.Delay((int) (stats.StartDelay * 1000));
 
     _hitbox.Attack();
     foreach (IEffect effect in stats.Effects) {
       effect.Play();
     }
-    _timeSinceLastAttack = 0;
     GD.Print("Attacked");
   }
 
@@ -39,6 +43,8 @@ public partial class MeleeAttack : Node, IAttack {
 
     _hitbox = (AttackHitbox) _hitboxReference.Instantiate();
     AddChild(_hitbox);
+    _hitbox.Damage = stats.Damage;
+    _hitbox.DamagesPlayer = damagesPlayer;
     for (int i = 0; i < stats.Hitboxes.Length; i ++) {
       CollisionShape2D collisionShape = new CollisionShape2D();
       collisionShape.Shape = stats.Hitboxes[i];

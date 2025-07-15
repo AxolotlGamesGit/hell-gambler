@@ -34,12 +34,15 @@ followParent = true
 [node name="Health" type="Node" parent="." node_paths=PackedStringArray("parent")]
 unique_name_in_owner = true
 script = ExtResource("5_qwxmt")
+CurrentHealth = 6
 heart = ExtResource("6_i4q3a")
-parent = NodePath(".")
+parent = NodePath("..")
+maxHealth = 1
+destroyOnDeath = false
 startingLocation = Vector2(-500, -250)
 xOffset = 60.0
+size = 0.1
 followParent = false
-CurrentHealth = 6
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("2_yk4ok")

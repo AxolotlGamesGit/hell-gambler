@@ -13,7 +13,7 @@ public partial class EnemyInput : Node, IMovementInput {
 
   private event Action _onAttack;
 
-  Vector2 IMovementInput.GetInput() {
+  Vector2 IMovementInput.GetMoveInput() {
 		if (player == null) {
 		  GD.Print("player reference not set");
 		}

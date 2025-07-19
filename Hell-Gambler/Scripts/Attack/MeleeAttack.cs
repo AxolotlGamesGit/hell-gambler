@@ -18,7 +18,6 @@ public partial class MeleeAttack : Node, IAttack {
   async Task IAttack.TryAttack(float direction) {
     IAttack self = this;
     if (self.CanAttack() == false) {
-      GD.Print($"Can't attack. Time since last attack: {_timeSinceLastAttack}");
       return;
     }
 
@@ -31,11 +30,14 @@ public partial class MeleeAttack : Node, IAttack {
     foreach (IEffect effect in stats.Effects) {
       effect.Play();
     }
-    GD.Print("Attacked");
   }
 
   bool IAttack.CanAttack() {
     return _timeSinceLastAttack >= stats.Cooldown;
+  }
+
+  bool IAttack.IsAttacking() {
+    return _timeSinceLastAttack < stats.Duration;
   }
 
   public override void _EnterTree() {

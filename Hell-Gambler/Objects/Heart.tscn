@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://dvpe50xlsg6eu"]
 
-[ext_resource type="Script" uid="uid://dj0lcung6faye" path="res://Scripts/Heart.cs" id="1_eiopt"]
+[ext_resource type="Script" uid="uid://dj0lcung6faye" path="res://Scripts/Base-Scripts/Heart.cs" id="1_eiopt"]
 [ext_resource type="Texture2D" uid="uid://bpkrfkh3kjwpw" path="res://Textures/Heart.png" id="1_ypamo"]
 
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_glu3v"]

@@ -29,7 +29,7 @@ public partial class Movement : Node {
   }
 
   public override void _PhysicsProcess(double delta) {
-    Vector2 moveInput = input.GetInput();
+    Vector2 moveInput = input.GetMoveInput();
 
     float acceleration = 0;
     if (friction < 1) {

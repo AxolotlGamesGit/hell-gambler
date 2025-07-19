@@ -37,7 +37,6 @@ script = ExtResource("5_qwxmt")
 CurrentHealth = 6
 heart = ExtResource("6_i4q3a")
 parent = NodePath("..")
-maxHealth = 1
 destroyOnDeath = false
 startingLocation = Vector2(-500, -250)
 xOffset = 60.0

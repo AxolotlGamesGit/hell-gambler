@@ -8,7 +8,7 @@ public partial class PlayerInput : Node, IMovementInput {
 
   private event Action _onAttack;
   private Vector2 _mousePosition;
-  Vector2 IMovementInput.GetInput() {
+  Vector2 IMovementInput.GetMoveInput() {
     return Input.GetVector("move_left", "move_right", "move_up", "move_down").Normalized();
   }
 

@@ -1,24 +1,24 @@
 [gd_scene load_steps=3 format=3 uid="uid://bkhj11aojpr0u"]
 
-[ext_resource type="PackedScene" uid="uid://c5ik1k3dp0m82" path="res://Objects/Player.tscn" id="1_iukft"]
-[ext_resource type="PackedScene" uid="uid://cnfmahu3y8tvr" path="res://Objects/Enemy.tscn" id="2_gl6un"]
+[ext_resource type="PackedScene" uid="uid://c5ik1k3dp0m82" path="res://entities/player/player.tscn" id="1_yqjtg"]
+[ext_resource type="PackedScene" uid="uid://cnfmahu3y8tvr" path="res://entities/enemies/enemy.tscn" id="2_lnu2h"]
 
 [node name="Game" type="Node2D"]
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(4, 4)
 
-[node name="Player" parent="." instance=ExtResource("1_iukft")]
+[node name="Player" parent="." instance=ExtResource("1_yqjtg")]
 unique_name_in_owner = true
 scale = Vector2(0.5, 0.5)
 
 [node name="Enemies" type="Node" parent="."]
 
-[node name="Enemy" parent="Enemies" instance=ExtResource("2_gl6un")]
+[node name="Enemy" parent="Enemies" instance=ExtResource("2_lnu2h")]
 position = Vector2(-171, -41)
 
-[node name="Enemy2" parent="Enemies" instance=ExtResource("2_gl6un")]
+[node name="Enemy2" parent="Enemies" instance=ExtResource("2_lnu2h")]
 position = Vector2(-432, -5)
 
-[node name="Enemy3" parent="Enemies" instance=ExtResource("2_gl6un")]
+[node name="Enemy3" parent="Enemies" instance=ExtResource("2_lnu2h")]
 position = Vector2(-439, -217)

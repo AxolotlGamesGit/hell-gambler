@@ -1,0 +1,16 @@
+[gd_scene load_steps=5 format=3 uid="uid://dvpe50xlsg6eu"]
+
+[ext_resource type="Texture2D" uid="uid://bpkrfkh3kjwpw" path="res://utilities/health/heart.png" id="1_me1a8"]
+[ext_resource type="Script" uid="uid://dj0lcung6faye" path="res://utilities/health/Heart.cs" id="2_o32yb"]
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_glu3v"]
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_8a684"]
+
+[node name="Sprite2D" type="Sprite2D" node_paths=PackedStringArray("sprite")]
+texture = ExtResource("1_me1a8")
+script = ExtResource("2_o32yb")
+sprite = NodePath(".")
+alive = ExtResource("1_me1a8")
+dead = SubResource("PlaceholderTexture2D_glu3v")
+empty = SubResource("PlaceholderTexture2D_8a684")

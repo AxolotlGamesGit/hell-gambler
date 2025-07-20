@@ -1,0 +1,53 @@
+[gd_scene load_steps=10 format=3 uid="uid://c5ik1k3dp0m82"]
+
+[ext_resource type="Script" uid="uid://dt5ad58jxccye" path="res://utilities/movement/Movement.cs" id="1_n6db0"]
+[ext_resource type="Script" uid="uid://by76hqpkvgfe7" path="res://entities/player/scripts/PlayerInput.cs" id="1_yk4ok"]
+[ext_resource type="Texture2D" uid="uid://btqtaxli3wyxa" path="res://misc/icon.svg" id="2_yk4ok"]
+[ext_resource type="Script" uid="uid://cbdhm2ya6vp4c" path="res://entities/attacks/_melee_attack/_scripts/MeleeAttack.cs" id="4_u60sl"]
+[ext_resource type="PackedScene" uid="uid://bcts5h260j8rt" path="res://entities/attacks/_melee_attack/hitbox.tscn" id="5_26q78"]
+[ext_resource type="Script" uid="uid://vwa0ctqwpu11" path="res://utilities/health/Health.cs" id="5_qwxmt"]
+[ext_resource type="Resource" uid="uid://dli6bxdstjllt" path="res://entities/attacks/sword_attack/sword_attack.tres" id="5_t1tke"]
+[ext_resource type="PackedScene" uid="uid://dvpe50xlsg6eu" path="res://utilities/health/heart.tscn" id="6_i4q3a"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_n6db0"]
+size = Vector2(125, 125)
+
+[node name="CharacterBody2D" type="CharacterBody2D"]
+
+[node name="PlayerInput" type="Node" parent="." node_paths=PackedStringArray("meleeAttackNode")]
+unique_name_in_owner = true
+script = ExtResource("1_yk4ok")
+meleeAttackNode = NodePath("../MeleeAttack")
+
+[node name="Movement" type="Node" parent="." node_paths=PackedStringArray("characterBody", "inputNode")]
+script = ExtResource("1_n6db0")
+characterBody = NodePath("..")
+inputNode = NodePath("../PlayerInput")
+topSpeed = 200.0
+friction = 0.8
+
+[node name="MeleeAttack" type="Node" parent="." node_paths=PackedStringArray("parent", "inputNode")]
+script = ExtResource("4_u60sl")
+stats = ExtResource("5_t1tke")
+parent = NodePath("..")
+inputNode = NodePath("../PlayerInput")
+hitboxReference = ExtResource("5_26q78")
+followParent = true
+
+[node name="Health" type="Node" parent="." node_paths=PackedStringArray("parent")]
+unique_name_in_owner = true
+script = ExtResource("5_qwxmt")
+CurrentHealth = 6
+heart = ExtResource("6_i4q3a")
+parent = NodePath("..")
+destroyOnDeath = false
+startingLocation = Vector2(-500, -250)
+xOffset = 60.0
+size = 0.1
+followParent = false
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_yk4ok")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_n6db0")

@@ -1,44 +1,39 @@
 [gd_scene load_steps=12 format=3 uid="uid://cnfmahu3y8tvr"]
 
-[ext_resource type="Script" uid="uid://6d7itvo0ml8n" path="res://entities/enemies/state_machine/EnemyStateMachine.cs" id="1_3dc2f"]
+[ext_resource type="Script" uid="uid://6d7itvo0ml8n" path="res://entities/enemies/_generic/state_machine/EnemyStateMachine.cs" id="1_3dc2f"]
+[ext_resource type="Script" uid="uid://c5lgvohwgglv7" path="res://entities/enemies/_generic/Enemy.cs" id="1_c8sr4"]
 [ext_resource type="Script" uid="uid://dt5ad58jxccye" path="res://utilities/movement/Movement.cs" id="2_8ks7m"]
-[ext_resource type="Script" uid="uid://bm2sy1gkqo6tq" path="res://entities/enemies/state_machine/DoNothing.cs" id="2_emp7d"]
-[ext_resource type="Script" uid="uid://bfs2brccjyhqq" path="res://entities/enemies/state_machine/FollowPlayer.cs" id="3_388v7"]
+[ext_resource type="Resource" uid="uid://c6jt6ilwh3u45" path="res://entities/enemies/basic_enemy/basic_enemy.tres" id="2_htu1g"]
 [ext_resource type="Script" uid="uid://vwa0ctqwpu11" path="res://utilities/health/Health.cs" id="3_v6vhh"]
 [ext_resource type="PackedScene" uid="uid://dvpe50xlsg6eu" path="res://utilities/health/heart.tscn" id="4_3dc2f"]
-[ext_resource type="Script" uid="uid://cbdhm2ya6vp4c" path="res://entities/attacks/_melee_attack/_scripts/MeleeAttack.cs" id="5_3dc2f"]
+[ext_resource type="Script" uid="uid://cbdhm2ya6vp4c" path="res://utilities/attacks/melee_attack/MeleeAttack.cs" id="5_3dc2f"]
 [ext_resource type="Texture2D" uid="uid://btqtaxli3wyxa" path="res://misc/icon.svg" id="5_a5uau"]
-[ext_resource type="Resource" uid="uid://dli6bxdstjllt" path="res://entities/attacks/sword_attack/sword_attack.tres" id="6_vnwlh"]
-[ext_resource type="PackedScene" uid="uid://bcts5h260j8rt" path="res://entities/attacks/_melee_attack/hitbox.tscn" id="9_sb13e"]
+[ext_resource type="Resource" uid="uid://brrvrd1pqidy8" path="res://entities/enemies/basic_enemy/basic_attack.tres" id="8_lahho"]
+[ext_resource type="PackedScene" uid="uid://bcts5h260j8rt" path="res://utilities/attacks/_generic/hitbox.tscn" id="9_sb13e"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_n6db0"]
 size = Vector2(120, 120)
 
-[node name="CharacterBody2D" type="CharacterBody2D"]
+[node name="CharacterBody2D" type="CharacterBody2D" node_paths=PackedStringArray("stateMachine", "movement", "health", "attackNode", "sprite")]
 scale = Vector2(0.5, 0.5)
+script = ExtResource("1_c8sr4")
+stats = ExtResource("2_htu1g")
+stateMachine = NodePath("StateMachine")
+movement = NodePath("Movement")
+health = NodePath("Health")
+attackNode = NodePath("Attack")
+sprite = NodePath("Sprite2D")
 
-[node name="Input" type="Node" parent="." node_paths=PackedStringArray("stateNodes", "Parent", "attackNode")]
+[node name="StateMachine" type="Node" parent="." node_paths=PackedStringArray("StateNodes", "Parent", "attackNode")]
 script = ExtResource("1_3dc2f")
-stateNodes = [NodePath("Idle"), NodePath("InRange"), NodePath("Attacking")]
+StateNodes = [NodePath(""), NodePath(""), NodePath("")]
 Parent = NodePath("..")
 attackNode = NodePath("../Attack")
-
-[node name="Idle" type="Node" parent="Input"]
-script = ExtResource("2_emp7d")
-
-[node name="InRange" type="Node" parent="Input" node_paths=PackedStringArray("parentNode")]
-script = ExtResource("3_388v7")
-parentNode = NodePath("..")
-attackRange = 120.0
-
-[node name="Attacking" type="Node" parent="Input"]
-script = ExtResource("2_emp7d")
 
 [node name="Movement" type="Node" parent="." node_paths=PackedStringArray("characterBody", "inputNode")]
 script = ExtResource("2_8ks7m")
 characterBody = NodePath("..")
-inputNode = NodePath("../Input")
-topSpeed = 100.0
+inputNode = NodePath("../StateMachine")
 friction = 0.8
 
 [node name="Health" type="Node" parent="." node_paths=PackedStringArray("parent")]
@@ -46,16 +41,16 @@ unique_name_in_owner = true
 script = ExtResource("3_v6vhh")
 heart = ExtResource("4_3dc2f")
 parent = NodePath("..")
-maxHealth = 2
+MaxHealth = 2
 startingLocation = Vector2(-22.5, -55)
 xOffset = 45.0
 size = 0.1
 
 [node name="Attack" type="Node" parent="." node_paths=PackedStringArray("parent", "inputNode")]
 script = ExtResource("5_3dc2f")
-stats = ExtResource("6_vnwlh")
+stats = ExtResource("8_lahho")
 parent = NodePath("..")
-inputNode = NodePath("../Input")
+inputNode = NodePath("../StateMachine")
 hitboxReference = ExtResource("9_sb13e")
 followParent = true
 damagesPlayer = true

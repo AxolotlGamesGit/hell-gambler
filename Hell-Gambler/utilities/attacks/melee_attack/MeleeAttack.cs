@@ -4,7 +4,7 @@ using System.Threading.Tasks;
 
 public partial class MeleeAttack : Node, IAttack {
   [ExportGroup("References")]
-  [Export] MeleeAttackStats stats;
+  [Export] public MeleeAttackStats stats;
   [Export] Node2D parent;
   [Export] Node inputNode;
   [Export] PackedScene hitboxReference;

@@ -11,7 +11,7 @@ public partial class Movement : Node {
   private  IMovementInput input;
 
   [ExportGroup("Parameters")]
-  [Export] float topSpeed = 3.0f;
+  [Export] public float TopSpeed = 100f;
   [Export] float friction = 0.9f;
 
   public override void _EnterTree() {
@@ -33,10 +33,10 @@ public partial class Movement : Node {
 
     float acceleration = 0;
     if (friction < 1) {
-      acceleration = ((1f / friction) - 1f) * topSpeed;    // Magic formula found at https://www.desmos.com/calculator/qkzwobcwyk
+      acceleration = ((1f / friction) - 1f) * TopSpeed;    // Magic formula found at https://www.desmos.com/calculator/qkzwobcwyk
     }
     else {
-      acceleration = topSpeed - characterBody.Velocity.Length();
+      acceleration = TopSpeed - characterBody.Velocity.Length();
     }
 
     Vector2 _velocity = characterBody.Velocity;

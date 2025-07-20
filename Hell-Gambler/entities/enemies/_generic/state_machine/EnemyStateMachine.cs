@@ -8,7 +8,7 @@ public partial class EnemyStateMachine : Node, IMovementInput, IAttackInput {
   public event EventHandler<AttackEventArgs> OnTryAttack;
 
   [ExportGroup("References")]
-  [Export] Godot.Collections.Array<Node> stateNodes;
+  [Export] public Godot.Collections.Array<Node> StateNodes;
   System.Collections.Generic.Dictionary<int, IInputBehavior> states = new();
   [Export] public Node2D Parent;
   [Export] Node attackNode;
@@ -52,6 +52,7 @@ public partial class EnemyStateMachine : Node, IMovementInput, IAttackInput {
   }
 
   void SwitchToState(State state) {
+    states[(int)currentState].OnTryAttack -= TryAttack;
     states[(int) currentState].OnDeactivate();
     currentState = state;
     states[(int) currentState].OnActivate();
@@ -65,28 +66,30 @@ public partial class EnemyStateMachine : Node, IMovementInput, IAttackInput {
   }
 
   public override void _EnterTree() {
-    attack = attackNode as IAttack;
-
-    for (int i = 0; i < stateNodes.Count; i++) {
-      if (stateNodes[i] == null) {
-        GD.PrintErr($"No node found at {i}");
-      }
-    }
-    for (int i = 0; i < stateNodes.Count; i++) {
-      if (stateNodes[i] is not IInputBehavior) {
-        GD.PrintErr($"No valid inputstate found at {i}");
-      }
-      states.Add(i, (IInputBehavior)stateNodes[i]);
-    }
-  }
-
-  public override void _Ready() {
     if (Player == null) {
       Player = GetNode<CharacterBody2D>("/root/Game/Player");
     }
     if (Player == null) {
       GD.PrintErr("Man fuh this bullshi");
     }
+
+    attack = attackNode as IAttack;
+
+    for (int i = 0; i < StateNodes.Count; i++) {
+      if (StateNodes[i] == null) {
+        GD.PrintErr($"No node found at {i}");
+      }
+    }
+    for (int i = 0; i < StateNodes.Count; i++) {
+      if (StateNodes[i] is not IInputBehavior) {
+        GD.PrintErr($"No valid inputstate found at {i}");
+      }
+      states.Add(i, (IInputBehavior)StateNodes[i]);
+    }
+  }
+
+  public override void _Ready() {
+
   }
 
   public override void _Process(double delta) {

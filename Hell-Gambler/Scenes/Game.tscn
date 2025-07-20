@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://bkhj11aojpr0u"]
 
 [ext_resource type="PackedScene" uid="uid://c5ik1k3dp0m82" path="res://entities/player/player.tscn" id="1_yqjtg"]
-[ext_resource type="PackedScene" uid="uid://cnfmahu3y8tvr" path="res://entities/enemies/enemy.tscn" id="2_lnu2h"]
+[ext_resource type="PackedScene" uid="uid://cnfmahu3y8tvr" path="res://entities/enemies/_generic/enemy.tscn" id="2_lnu2h"]
 
 [node name="Game" type="Node2D"]
 
@@ -19,6 +19,3 @@ position = Vector2(-171, -41)
 
 [node name="Enemy2" parent="Enemies" instance=ExtResource("2_lnu2h")]
 position = Vector2(-432, -5)
-
-[node name="Enemy3" parent="Enemies" instance=ExtResource("2_lnu2h")]
-position = Vector2(-439, -217)

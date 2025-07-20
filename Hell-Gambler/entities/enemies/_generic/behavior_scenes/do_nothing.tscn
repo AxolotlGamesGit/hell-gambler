@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://tv6qx0gk8j8h"]
+
+[ext_resource type="Script" uid="uid://bm2sy1gkqo6tq" path="res://entities/enemies/_generic/state_machine/DoNothing.cs" id="1_n75wx"]
+
+[node name="DoNothing" type="Node"]
+script = ExtResource("1_n75wx")

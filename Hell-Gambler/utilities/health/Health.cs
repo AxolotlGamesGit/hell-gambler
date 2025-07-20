@@ -11,7 +11,7 @@ public partial class Health : Node {
   [Export] Node parent;
 
   [ExportGroup("Behavior")]
-  [Export] int maxHealth = 10;
+  [Export] public int MaxHealth = 10;
   [Export] bool destroyOnDeath = true;
 
   [ExportGroup("SpawningParameters")]
@@ -33,7 +33,7 @@ public partial class Health : Node {
 
   void DisplayHealth() {
     for (int i = 0; i < _hearts.Count; i++) {
-      if (i + 1 > maxHealth) {
+      if (i + 1 > MaxHealth) {
         _hearts[i].Status = HeartStatus.empty;
       }
       else if (i + 1 > CurrentHealth) {
@@ -48,7 +48,7 @@ public partial class Health : Node {
   public override void _EnterTree() {
     _hearts = new List<Heart>();
     Vector2 _currentLocation = startingLocation;
-    for (int i = 0; i < maxHealth; i++) {
+    for (int i = 0; i < MaxHealth; i++) {
       Heart _heart = (Heart) heart.Instantiate();
       _heart.RelativePosition = _currentLocation;
       _heart.Scale = new Vector2(size, size);
@@ -58,7 +58,7 @@ public partial class Health : Node {
       _currentLocation.X += xOffset;
     }
 
-    CurrentHealth = maxHealth;
+    CurrentHealth = MaxHealth;
   }
 
   public override void _Ready() {

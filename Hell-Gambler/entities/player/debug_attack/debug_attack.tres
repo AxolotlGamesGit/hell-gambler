@@ -1,6 +1,6 @@
 [gd_resource type="Resource" load_steps=3 format=3 uid="uid://djibkmpwogwi1"]
 
-[ext_resource type="Script" uid="uid://dhmpqb125gctb" path="res://entities/attacks/_melee_attack/_scripts/MeleeAttackStats.cs" id="1_mqni1"]
+[ext_resource type="Script" uid="uid://dhmpqb125gctb" path="res://utilities/attacks/melee_attack/MeleeAttackStats.cs" id="1_mqni1"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qboiq"]
 size = Vector2(200, 200)

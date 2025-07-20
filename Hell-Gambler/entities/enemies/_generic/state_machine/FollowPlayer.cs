@@ -1,26 +1,26 @@
 using Godot;
 using System;
+using System.Threading.Tasks;
 
 public partial class FollowPlayer : Node, IInputBehavior {
   public event EventHandler<AttackEventArgs> OnTryAttack;
 
   [ExportGroup("References")]
-  [Export] Node parentNode;
-  EnemyStateMachine parent;
+  [Export] Node stateMachineNode;
+  EnemyStateMachine stateMachine;
 
   [ExportGroup("Paramters")]
   [Export] bool shouldAttack = true;
   [Export] float attackRange = 100;
-  [Export] float attackDelay = 1;
 
-  Node2D player;
+  private Node2D player;
 
   Vector2 IMovementInput.GetMoveInput() {
-    return (player.Position - parent.Parent.Position).Normalized();
+    return (player.Position - stateMachine.Parent.Position).Normalized();
   }
 
   void IBehavior.OnActivate() {
-    player = parent.Player;
+    player = stateMachine.Player;
   }
 
   void IBehavior.OnDeactivate() {
@@ -28,14 +28,14 @@ public partial class FollowPlayer : Node, IInputBehavior {
   }
 
   public override void _EnterTree() {
-    if (parentNode == null) {
-      parentNode = GetParent();
+    if (stateMachineNode == null) {
+      stateMachineNode = GetParent();
     }
-    parent = (EnemyStateMachine)parentNode;
+    stateMachine = (EnemyStateMachine)stateMachineNode;
   }
 
   public override void _Process(double delta) {
-    if ((player.Position - parent.Parent.Position).Length() < attackRange) {
+    if ((player.Position - stateMachine.Parent.Position).Length() < attackRange) {
       OnTryAttack?.Invoke(this, new AttackEventArgs(0f));
     }
   }

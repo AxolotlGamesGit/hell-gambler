@@ -1,6 +1,5 @@
-[gd_scene load_steps=12 format=3 uid="uid://cnfmahu3y8tvr"]
+[gd_scene load_steps=11 format=3 uid="uid://cnfmahu3y8tvr"]
 
-[ext_resource type="Script" uid="uid://6d7itvo0ml8n" path="res://entities/enemies/_generic/state_machine/EnemyStateMachine.cs" id="1_3dc2f"]
 [ext_resource type="Script" uid="uid://c5lgvohwgglv7" path="res://entities/enemies/_generic/Enemy.cs" id="1_c8sr4"]
 [ext_resource type="Script" uid="uid://dt5ad58jxccye" path="res://utilities/movement/Movement.cs" id="2_8ks7m"]
 [ext_resource type="Resource" uid="uid://c6jt6ilwh3u45" path="res://entities/enemies/basic_enemy/basic_enemy.tres" id="2_htu1g"]
@@ -14,26 +13,19 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_n6db0"]
 size = Vector2(120, 120)
 
-[node name="CharacterBody2D" type="CharacterBody2D" node_paths=PackedStringArray("stateMachine", "movement", "health", "attackNode", "sprite")]
+[node name="CharacterBody2D" type="CharacterBody2D" node_paths=PackedStringArray("movement", "health", "attackNode", "sprite")]
 scale = Vector2(0.5, 0.5)
 script = ExtResource("1_c8sr4")
 stats = ExtResource("2_htu1g")
-stateMachine = NodePath("StateMachine")
 movement = NodePath("Movement")
 health = NodePath("Health")
 attackNode = NodePath("Attack")
 sprite = NodePath("Sprite2D")
 
-[node name="StateMachine" type="Node" parent="." node_paths=PackedStringArray("StateNodes", "Parent", "attackNode")]
-script = ExtResource("1_3dc2f")
-StateNodes = [NodePath(""), NodePath(""), NodePath("")]
-Parent = NodePath("..")
-attackNode = NodePath("../Attack")
-
 [node name="Movement" type="Node" parent="." node_paths=PackedStringArray("characterBody", "inputNode")]
 script = ExtResource("2_8ks7m")
 characterBody = NodePath("..")
-inputNode = NodePath("../StateMachine")
+inputNode = NodePath("")
 friction = 0.8
 
 [node name="Health" type="Node" parent="." node_paths=PackedStringArray("parent")]
@@ -50,7 +42,7 @@ size = 0.1
 script = ExtResource("5_3dc2f")
 stats = ExtResource("8_lahho")
 parent = NodePath("..")
-inputNode = NodePath("../StateMachine")
+inputNode = NodePath("")
 hitboxReference = ExtResource("9_sb13e")
 followParent = true
 damagesPlayer = true

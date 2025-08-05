@@ -13,8 +13,8 @@ public partial class EnemyStats : Resource {
   [Export] public int Health;
   [Export] public float MoveSpeed;
 
-  [ExportGroup("Behavior")]
-  [Export] public PackedScene[] Behaviors = new PackedScene[3];
+  [ExportGroup("Input")]
+  [Export] public PackedScene Input;
 
   [ExportGroup("Art")]
   [Export] public Texture2D Texture;

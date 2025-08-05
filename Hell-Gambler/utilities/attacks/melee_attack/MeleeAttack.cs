@@ -48,9 +48,6 @@ public partial class MeleeAttack : Node, IAttack {
   }
 
   public override void _EnterTree() {
-    input = (IAttackInput)inputNode;
-    input.OnTryAttack += TryAttackVoid;
-
     SetProcess(true);
 
     if (hitboxReference == null) {
@@ -67,6 +64,17 @@ public partial class MeleeAttack : Node, IAttack {
       collisionShape.Position = stats.HitboxOffsets[i];
       _hitbox.AddChild(collisionShape);
     }
+  }
+
+  public override void _Ready() {
+    if (inputNode == null) {
+      inputNode = GetParent().GetNode("Input");
+      if (inputNode == null) {
+        GD.PrintErr("No valid input found");
+      }
+    }
+    input = (IAttackInput) inputNode;
+    input.OnTryAttack += TryAttackVoid;
   }
 
   public override void _Process(double delta) {

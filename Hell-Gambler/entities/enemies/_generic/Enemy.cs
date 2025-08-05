@@ -5,18 +5,15 @@ public partial class Enemy : CharacterBody2D {
   [Export] EnemyStats stats;
 
   [ExportGroup("References")]
-  [Export] EnemyStateMachine stateMachine;
   [Export] Movement movement;
   [Export] Health health;
   [Export] Node attackNode;
   [Export] Sprite2D sprite;
 
   public override void _EnterTree() {
-    for (int i = 0; i < 3; i++) {
-      Node _behavior = stats.Behaviors[i].Instantiate();
-      stateMachine.AddChild(_behavior);
-      stateMachine.StateNodes[i] = _behavior;
-    }
+    Node _input = stats.Input.Instantiate();
+    _input.Name = "Input";
+    AddChild(_input);
 
     movement.TopSpeed = stats.MoveSpeed;
 
@@ -27,5 +24,8 @@ public partial class Enemy : CharacterBody2D {
     }
 
     sprite.Texture = stats.Texture;
+  }
+
+  public override void _Ready() {
   }
 }

@@ -19,12 +19,18 @@ public partial class Movement : Node {
       GD.Print($"{debugTag}: character body not provided.");
     }
 
-    input = (IMovementInput) inputNode;
-
     characterBody.PlatformFloorLayers = new();
   }
 
   public override void _Ready() {
+    if (inputNode == null) {
+      inputNode = GetParent().GetNode("Input");
+      if (inputNode == null) {
+        GD.PrintErr("No valid input found");
+      }
+    }
+    input = (IMovementInput)inputNode;
+
     SetPhysicsProcess(true);
   }
 

@@ -1,9 +1,8 @@
-[gd_resource type="Resource" load_steps=6 format=3 uid="uid://c6jt6ilwh3u45"]
+[gd_resource type="Resource" load_steps=5 format=3 uid="uid://c6jt6ilwh3u45"]
 
 [ext_resource type="Script" uid="uid://bqk7qsbpy6740" path="res://entities/enemies/_generic/EnemyStats.cs" id="1_4mk80"]
 [ext_resource type="Resource" uid="uid://brrvrd1pqidy8" path="res://entities/enemies/basic_enemy/basic_attack.tres" id="1_87byx"]
-[ext_resource type="PackedScene" uid="uid://tv6qx0gk8j8h" path="res://entities/enemies/_generic/behavior_scenes/do_nothing.tscn" id="2_hvo74"]
-[ext_resource type="PackedScene" uid="uid://clfhabmxgmw1u" path="res://entities/enemies/_generic/behavior_scenes/chase_and_attack.tscn" id="3_7hq0o"]
+[ext_resource type="PackedScene" uid="uid://d4cjcnijt8gy1" path="res://entities/enemies/basic_enemy/input.tscn" id="2_aapq0"]
 [ext_resource type="Texture2D" uid="uid://btqtaxli3wyxa" path="res://misc/icon.svg" id="4_uev1j"]
 
 [resource]
@@ -12,5 +11,5 @@ AttackType = 0
 AttackStats = ExtResource("1_87byx")
 Health = 2
 MoveSpeed = 100.0
-Behaviors = [ExtResource("2_hvo74"), ExtResource("3_7hq0o"), ExtResource("2_hvo74")]
+Input = ExtResource("2_aapq0")
 Texture = ExtResource("4_uev1j")

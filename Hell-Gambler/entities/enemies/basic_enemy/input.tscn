@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://d4cjcnijt8gy1"]
+
+[ext_resource type="Script" uid="uid://baptxsulr81g5" path="res://entities/enemies/_generic/BasicEnemyInput.cs" id="1_hiwyb"]
+
+[node name="Input" type="Node"]
+script = ExtResource("1_hiwyb")
+attackDistance = 120.0

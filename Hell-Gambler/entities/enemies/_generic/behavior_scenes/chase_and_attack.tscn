@@ -1,6 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://clfhabmxgmw1u"]
-
-[ext_resource type="Script" uid="uid://bfs2brccjyhqq" path="res://entities/enemies/_generic/state_machine/FollowPlayer.cs" id="1_tcxmu"]
-
-[node name="FollowPlayer" type="Node"]
-script = ExtResource("1_tcxmu")

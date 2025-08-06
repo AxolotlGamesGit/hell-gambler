@@ -45,5 +45,7 @@ public partial class AttackHitbox : Area2D {
   public override void _ExitTree() {
     BodyEntered -= OnBodyEntered;
     BodyExited -= OnBodyExited;
+
+    _bodies.Clear();
   }
 }

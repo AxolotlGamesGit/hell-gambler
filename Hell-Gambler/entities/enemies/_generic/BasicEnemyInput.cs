@@ -1,5 +1,6 @@
 using Godot;
 using System;
+using System.Threading.Tasks;
 
 public partial class BasicEnemyInput : Node, IMovementInput, IAttackInput {
   public event EventHandler<AttackEventArgs> OnTryAttack;
@@ -12,6 +13,7 @@ public partial class BasicEnemyInput : Node, IMovementInput, IAttackInput {
   [ExportGroup("Parameters")]
   [Export] float idleDistance = 700;
   [Export] float attackDistance = 200;
+  [Export] float attackDelaySeconds = 1;
 
   private enum State {
     Idle = 0,
@@ -20,6 +22,7 @@ public partial class BasicEnemyInput : Node, IMovementInput, IAttackInput {
   }
   private State _state = State.Idle;
   private Node2D _player = null;
+  private event Action _onStartAttack;
 
   Vector2 IMovementInput.GetMoveInput() {
     if (_state == State.InRange) {
@@ -27,6 +30,15 @@ public partial class BasicEnemyInput : Node, IMovementInput, IAttackInput {
     }
     else {
       return Vector2.Zero;
+    }
+  }
+
+  async void TryAttack() {
+    await Task.Delay((int)(attackDelaySeconds * 1000));
+
+    if (IsInstanceValid(this)) {
+      double _attackDirection = VectorMath.GetRotationFromVector(_player.Position - parent.Position);
+      OnTryAttack?.Invoke(this, new AttackEventArgs((float)_attackDirection));
     }
   }
 
@@ -38,6 +50,8 @@ public partial class BasicEnemyInput : Node, IMovementInput, IAttackInput {
       attackNode = parent.GetNode("Attack");
     }
     attack = (IAttack) attackNode;
+
+    _onStartAttack += TryAttack;
   }
 
   public override void _Ready() {
@@ -65,8 +79,7 @@ public partial class BasicEnemyInput : Node, IMovementInput, IAttackInput {
 
     // Attacks if we are close enough and not currently attacking.
     if (_state == State.InRange  &&  _distanceToPlayer < attackDistance) {
-      double _attackDirection = VectorMath.GetRotationFromVector(_player.Position - parent.Position);
-      OnTryAttack?.Invoke(this, new AttackEventArgs((float) _attackDirection));
+      _onStartAttack?.Invoke();
     }
   }
 }

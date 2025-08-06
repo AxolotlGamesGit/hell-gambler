@@ -3,15 +3,15 @@ using System;
 using System.Collections.Generic;
 
 public partial class Health : Node {
-  [Export] public int CurrentHealth { get; private set; }
+  public int CurrentHealth { get; private set; }
   public event Action OnDeath;
+  [Export] public int MaxHealth = 10;
 
   [ExportGroup("References")]
   [Export] PackedScene heart;
   [Export] Node parent;
 
   [ExportGroup("Behavior")]
-  [Export] public int MaxHealth = 10;
   [Export] bool destroyOnDeath = true;
 
   [ExportGroup("SpawningParameters")]

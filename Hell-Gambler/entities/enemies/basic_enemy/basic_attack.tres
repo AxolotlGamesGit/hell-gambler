@@ -13,5 +13,5 @@ HitboxOffsets = PackedVector2Array(0, -50)
 Damage = 1
 Cooldown = 2.0
 Duration = 1.0
-StartDelay = 0.5
+StartDelay = 0.3
 metadata/_custom_type_script = "uid://dhmpqb125gctb"

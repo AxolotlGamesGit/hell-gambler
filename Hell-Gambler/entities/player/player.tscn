@@ -37,7 +37,7 @@ followParent = true
 [node name="Health" type="Node" parent="." node_paths=PackedStringArray("parent")]
 unique_name_in_owner = true
 script = ExtResource("5_qwxmt")
-CurrentHealth = 6
+MaxHealth = 5
 heart = ExtResource("6_i4q3a")
 parent = NodePath("..")
 destroyOnDeath = false

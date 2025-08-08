@@ -1,13 +1,15 @@
-[gd_resource type="Resource" load_steps=3 format=3 uid="uid://dli6bxdstjllt"]
+[gd_resource type="Resource" load_steps=5 format=3 uid="uid://dli6bxdstjllt"]
 
+[ext_resource type="PackedScene" uid="uid://co88snectwxgs" path="res://entities/player/base_atack/base_attack_right.tscn" id="1_b0e3m"]
 [ext_resource type="Script" uid="uid://dhmpqb125gctb" path="res://utilities/attacks/melee_attack/MeleeAttackStats.cs" id="1_qboiq"]
+[ext_resource type="PackedScene" uid="uid://b048kd3ieviay" path="res://entities/player/base_atack/base_attack_left.tscn" id="2_0hi86"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qboiq"]
 size = Vector2(100, 50)
 
 [resource]
 script = ExtResource("1_qboiq")
-Effects = []
+Animations = [ExtResource("1_b0e3m"), ExtResource("2_0hi86")]
 Hitboxes = [SubResource("RectangleShape2D_qboiq")]
 HitboxOffsets = PackedVector2Array(0, -50)
 Damage = 1

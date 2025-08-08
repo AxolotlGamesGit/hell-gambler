@@ -16,6 +16,8 @@ public partial class MeleeAttack : Node, IAttack {
 
   private float _timeSinceLastAttack;
   private AttackHitbox _hitbox;
+  private IEffect[] _animations;
+  private int _animationIndex = 0;
 
   async Task IAttack.TryAttack(float direction) {
     IAttack self = this;
@@ -29,8 +31,11 @@ public partial class MeleeAttack : Node, IAttack {
     await Task.Delay((int) (stats.StartDelay * 1000));
 
     _hitbox.Attack();
-    foreach (IEffect effect in stats.Effects) {
-      effect.Play();
+
+    if (_animations.Length >= 1  &&  _animations[0] != null) {
+      _animations[_animationIndex].Play();
+
+      _animationIndex = (_animationIndex + 1) % _animations.Length; ;
     }
   }
 
@@ -63,6 +68,13 @@ public partial class MeleeAttack : Node, IAttack {
       collisionShape.Shape = stats.Hitboxes[i];
       collisionShape.Position = stats.HitboxOffsets[i];
       _hitbox.AddChild(collisionShape);
+    }
+
+    _animations = new IEffect[stats.Animations.Length];
+    for (int i = 0; i < stats.Animations.Length; i++) {
+      Node animation = stats.Animations[i].Instantiate();
+      AddChild(animation);
+      _animations[i] = (IEffect) animation;
     }
   }
 

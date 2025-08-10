@@ -3,7 +3,7 @@ using System;
 
 public partial class MeleeAttackStats : Resource {
   [ExportGroup("Effects")]
-  [Export] public PackedScene[] Animations = [];
+  [Export] public PackedScene Animation;
   [Export] public Shape2D[] Hitboxes = [];
   [Export] public Vector2[] HitboxOffsets = [];
 

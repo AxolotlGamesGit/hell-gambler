@@ -1,17 +1,16 @@
-[gd_resource type="Resource" load_steps=5 format=3 uid="uid://dli6bxdstjllt"]
+[gd_resource type="Resource" load_steps=4 format=3 uid="uid://dli6bxdstjllt"]
 
-[ext_resource type="PackedScene" uid="uid://co88snectwxgs" path="res://entities/player/base_atack/base_attack_right.tscn" id="1_b0e3m"]
+[ext_resource type="PackedScene" uid="uid://dsmjjqo3jf62n" path="res://entities/player/base_atack/base_attack_animation.tscn" id="1_b0e3m"]
 [ext_resource type="Script" uid="uid://dhmpqb125gctb" path="res://utilities/attacks/melee_attack/MeleeAttackStats.cs" id="1_qboiq"]
-[ext_resource type="PackedScene" uid="uid://b048kd3ieviay" path="res://entities/player/base_atack/base_attack_left.tscn" id="2_0hi86"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qboiq"]
-size = Vector2(100, 50)
+size = Vector2(200, 100)
 
 [resource]
 script = ExtResource("1_qboiq")
-Animations = [ExtResource("1_b0e3m"), ExtResource("2_0hi86")]
+Animation = ExtResource("1_b0e3m")
 Hitboxes = [SubResource("RectangleShape2D_qboiq")]
-HitboxOffsets = PackedVector2Array(0, -50)
+HitboxOffsets = PackedVector2Array(0, -100)
 Damage = 1
 Cooldown = 2.0
 Duration = 1.0

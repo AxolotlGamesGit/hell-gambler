@@ -18,7 +18,6 @@ public partial class Health : Node {
   [Export] Vector2 startingLocation = new Vector2(0, -55);
   [Export] float xOffset = 20;
   [Export] float size = 0.4f;
-  [Export] bool followParent = true;
 
   private List<Heart> _hearts;
 
@@ -50,9 +49,8 @@ public partial class Health : Node {
     Vector2 _currentLocation = startingLocation;
     for (int i = 0; i < MaxHealth; i++) {
       Heart _heart = (Heart) heart.Instantiate();
-      _heart.RelativePosition = _currentLocation;
+      _heart.Position = _currentLocation;
       _heart.Scale = new Vector2(size, size);
-      _heart.FollowParent = followParent;
       this.CallDeferred("add_child", _heart);
       _hearts.Add(_heart);
       _currentLocation.X += xOffset;

@@ -11,12 +11,12 @@ public partial class MeleeAttack : Node, IAttack {
   IAttackInput input;
 
   [ExportGroup("Parameters")]
-  [Export] bool followParent;
   [Export] bool damagesPlayer;
 
   private float _timeSinceLastAttack;
   private AttackHitbox _hitbox;
-  private IEffect[] _animations;
+  private Node _animationNode;
+  private IEffect _animation;
   private int _animationIndex = 0;
 
   async Task IAttack.TryAttack(float direction) {
@@ -31,12 +31,7 @@ public partial class MeleeAttack : Node, IAttack {
     await Task.Delay((int) (stats.StartDelay * 1000));
 
     _hitbox.Attack();
-
-    if (_animations.Length >= 1  &&  _animations[0] != null) {
-      _animations[_animationIndex].Play();
-
-      _animationIndex = (_animationIndex + 1) % _animations.Length; ;
-    }
+    _animation?.Play();
   }
 
   bool IAttack.CanAttack() {
@@ -70,11 +65,14 @@ public partial class MeleeAttack : Node, IAttack {
       _hitbox.AddChild(collisionShape);
     }
 
-    _animations = new IEffect[stats.Animations.Length];
-    for (int i = 0; i < stats.Animations.Length; i++) {
-      Node animation = stats.Animations[i].Instantiate();
-      AddChild(animation);
-      _animations[i] = (IEffect) animation;
+    if (stats.Animation != null) {
+      _animationNode = stats.Animation.Instantiate();
+      if (_animationNode is not IEffect) {
+        GD.PrintErr($"Animation provided does not implement IEffect. Name: {this.Name}. Parent name: {parent.Name}");
+        return;
+      }
+      AddChild(_animationNode);
+      _animation = (IEffect)_animationNode;
     }
   }
 
@@ -91,8 +89,5 @@ public partial class MeleeAttack : Node, IAttack {
 
   public override void _Process(double delta) {
     _timeSinceLastAttack += (float) delta;
-    if (followParent == true) {
-      _hitbox.Position = parent.Position;
-    }
   }
 }

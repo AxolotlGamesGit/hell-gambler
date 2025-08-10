@@ -13,8 +13,6 @@ public partial class Heart : Sprite2D {
   [Export] Texture2D empty;
   
   [Export] public HeartStatus Status = HeartStatus.alive;
-  public Vector2 RelativePosition;
-  public bool FollowParent;
 
   private Node2D parent;
 
@@ -42,13 +40,6 @@ public partial class Heart : Sprite2D {
       case HeartStatus.empty:
         sprite.Texture = dead;
         break;
-    }
-
-    if (FollowParent == true) {
-      GlobalPosition = parent.Position + RelativePosition;
-    }
-    else {
-      Position = RelativePosition;
     }
   }
 }

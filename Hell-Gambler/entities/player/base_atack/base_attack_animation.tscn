@@ -1,0 +1,140 @@
+[gd_scene load_steps=8 format=3 uid="uid://dsmjjqo3jf62n"]
+
+[ext_resource type="Script" uid="uid://b23la6q2rvu0v" path="res://utilities/attacks/melee_attack/AttackAnimations.cs" id="1_dg6jk"]
+[ext_resource type="Texture2D" uid="uid://dqd8yo6hllcnh" path="res://entities/player/base_atack/sword.png" id="2_o0omt"]
+[ext_resource type="Texture2D" uid="uid://btqtaxli3wyxa" path="res://misc/icon.svg" id="3_l3fdo"]
+
+[sub_resource type="Animation" id="Animation_i2bgp"]
+resource_name = "base_attack_right"
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sword:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(-88, -0.25, 88, 0.1, 88, 88, -0.1, -88, 0.15, 0),
+"times": PackedFloat32Array(0, 0.2)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sword:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(-103, -0.25, 0, 0.1, -51, -103, -0.0682331, -49, 0.25, 0),
+"times": PackedFloat32Array(0, 0.2)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sword:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(-0.576, 0, 0.576, 0.1, 0.576, 0.575959, -0.1, -0.576, 0.15, 0),
+"times": PackedFloat32Array(0, 0.2)
+}
+
+[sub_resource type="Animation" id="Animation_bngdg"]
+length = 0.001
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sword:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(-88, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sword:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(-103, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sword:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(-0.576, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+
+[sub_resource type="Animation" id="Animation_0jlv3"]
+resource_name = "base_attack_left"
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sword:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(88, -0.1, -88, 0.1, -88, -88, -0.1, 88, 0.1, 88),
+"times": PackedFloat32Array(0, 0.2)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sword:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(-103, -0.0682331, -49, 0.068, -49, -103, -0.1, -51, 0.1, -51),
+"times": PackedFloat32Array(0, 0.2)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sword:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(0.575959, -0.1, -0.576, 0.1, -0.576, -0.576, -0.1, 0.576, 0.1, 0.576),
+"times": PackedFloat32Array(0, 0.2)
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_didlc"]
+_data = {
+&"RESET": SubResource("Animation_bngdg"),
+&"base_attack_left": SubResource("Animation_0jlv3"),
+&"base_attack_right": SubResource("Animation_i2bgp")
+}
+
+[node name="Node2D" type="Node2D" node_paths=PackedStringArray("animationPlayer")]
+script = ExtResource("1_dg6jk")
+animationNames = PackedStringArray("base_attack_right", "base_attack_left")
+animationPlayer = NodePath("AnimationPlayer")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_didlc")
+}
+
+[node name="Sword" type="Sprite2D" parent="."]
+position = Vector2(-88, -103)
+rotation = -0.576
+scale = Vector2(0.75, 0.75)
+texture = ExtResource("2_o0omt")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+visible = false
+texture = ExtResource("3_l3fdo")

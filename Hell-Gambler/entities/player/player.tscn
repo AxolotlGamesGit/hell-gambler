@@ -17,22 +17,15 @@ size = Vector2(125, 125)
 [node name="PlayerInput" type="Node" parent="." node_paths=PackedStringArray("meleeAttackNode")]
 unique_name_in_owner = true
 script = ExtResource("1_yk4ok")
-meleeAttackNode = NodePath("../MeleeAttack")
+meleeAttackNode = NodePath("")
 
-[node name="Movement" type="Node" parent="." node_paths=PackedStringArray("characterBody", "inputNode")]
+[node name="Movement" type="Node2D" parent="." node_paths=PackedStringArray("characterBody", "inputNode")]
+unique_name_in_owner = true
 script = ExtResource("1_n6db0")
 characterBody = NodePath("..")
 inputNode = NodePath("../PlayerInput")
 TopSpeed = 150.0
 friction = 0.8
-
-[node name="MeleeAttack" type="Node" parent="." node_paths=PackedStringArray("parent", "inputNode")]
-script = ExtResource("4_u60sl")
-stats = ExtResource("5_t1tke")
-parent = NodePath("..")
-inputNode = NodePath("../PlayerInput")
-hitboxReference = ExtResource("5_26q78")
-followParent = true
 
 [node name="Health" type="Node" parent="." node_paths=PackedStringArray("parent")]
 unique_name_in_owner = true
@@ -44,7 +37,14 @@ destroyOnDeath = false
 startingLocation = Vector2(-500, -250)
 xOffset = 60.0
 size = 0.1
-followParent = false
+
+[node name="MeleeAttack" type="Node2D" parent="." node_paths=PackedStringArray("parent", "inputNode")]
+unique_name_in_owner = true
+script = ExtResource("4_u60sl")
+stats = ExtResource("5_t1tke")
+parent = NodePath("..")
+inputNode = NodePath("../PlayerInput")
+hitboxReference = ExtResource("5_26q78")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("2_yk4ok")

@@ -3,13 +3,12 @@
 [ext_resource type="Script" uid="uid://dhmpqb125gctb" path="res://utilities/attacks/melee_attack/MeleeAttackStats.cs" id="1_hrcup"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qboiq"]
-size = Vector2(100, 50)
+size = Vector2(200, 100)
 
 [resource]
 script = ExtResource("1_hrcup")
-Effects = []
 Hitboxes = [SubResource("RectangleShape2D_qboiq")]
-HitboxOffsets = PackedVector2Array(0, -50)
+HitboxOffsets = PackedVector2Array(0, -100)
 Damage = 1
 Cooldown = 2.0
 Duration = 1.0

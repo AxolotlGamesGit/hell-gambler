@@ -22,27 +22,28 @@ health = NodePath("Health")
 attackNode = NodePath("Attack")
 sprite = NodePath("Sprite2D")
 
-[node name="Movement" type="Node" parent="." node_paths=PackedStringArray("characterBody")]
+[node name="Movement" type="Node2D" parent="." node_paths=PackedStringArray("characterBody")]
+unique_name_in_owner = true
 script = ExtResource("2_8ks7m")
 characterBody = NodePath("..")
 friction = 0.8
 
-[node name="Health" type="Node" parent="." node_paths=PackedStringArray("parent")]
+[node name="Health" type="Node2D" parent="." node_paths=PackedStringArray("parent")]
 unique_name_in_owner = true
 script = ExtResource("3_v6vhh")
 MaxHealth = 2
 heart = ExtResource("4_3dc2f")
 parent = NodePath("..")
-startingLocation = Vector2(-22.5, -55)
-xOffset = 45.0
+startingLocation = Vector2(-35, -95)
+xOffset = 70.0
 size = 0.1
 
-[node name="Attack" type="Node" parent="." node_paths=PackedStringArray("parent")]
+[node name="Attack" type="Node2D" parent="." node_paths=PackedStringArray("parent")]
+unique_name_in_owner = true
 script = ExtResource("5_3dc2f")
 stats = ExtResource("8_lahho")
 parent = NodePath("..")
 hitboxReference = ExtResource("9_sb13e")
-followParent = true
 damagesPlayer = true
 
 [node name="Sprite2D" type="Sprite2D" parent="."]

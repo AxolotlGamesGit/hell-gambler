@@ -5,10 +5,6 @@ using System.Threading.Tasks;
 public partial class PlayerInput : Node, IMovementInput, IAttackInput {
   public event EventHandler<AttackEventArgs> OnTryAttack;
 
-  [ExportGroup("References")]
-  [Export] Node meleeAttackNode;
-  private IAttack meleeAttack;
-
   [ExportGroup("Parameters")]
   [Export] float rollSpeed;
   [Export] float rollDuration;
@@ -21,8 +17,12 @@ public partial class PlayerInput : Node, IMovementInput, IAttackInput {
     return Input.GetVector("move_left", "move_right", "move_up", "move_down").Normalized() * _speedMultiplier;
   }
 
+  float IAttackInput.GetLookDirection() {
+    return (float)VectorMath.GetRotationFromVector(_mousePosition - ((Node2D)GetParent()).Position);
+  }
+
   void Attack() {
-    float direction = (float)VectorMath.GetRotationFromVector(_mousePosition - ((Node2D)GetParent()).Position);
+    float direction = ((IAttackInput)this).GetLookDirection();
     OnTryAttack?.Invoke(this, new AttackEventArgs(direction));
   }
 
@@ -43,7 +43,5 @@ public partial class PlayerInput : Node, IMovementInput, IAttackInput {
 
   public override void _EnterTree() {
     _onRoll += Roll;
-
-    meleeAttack = (IAttack)meleeAttackNode;
   }
 }

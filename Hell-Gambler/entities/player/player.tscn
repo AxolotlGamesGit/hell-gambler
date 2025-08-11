@@ -14,10 +14,9 @@ size = Vector2(125, 125)
 
 [node name="CharacterBody2D" type="CharacterBody2D"]
 
-[node name="PlayerInput" type="Node" parent="." node_paths=PackedStringArray("meleeAttackNode")]
+[node name="PlayerInput" type="Node" parent="."]
 unique_name_in_owner = true
 script = ExtResource("1_yk4ok")
-meleeAttackNode = NodePath("")
 
 [node name="Movement" type="Node2D" parent="." node_paths=PackedStringArray("characterBody", "inputNode")]
 unique_name_in_owner = true

@@ -19,7 +19,7 @@ public partial class MeleeAttack : Node, IAttack {
   private IEffect _animation;
   private int _animationIndex = 0;
 
-  async Task IAttack.TryAttack(float direction) {
+  async Task TryAttack(float direction) {
     IAttack self = this;
     if (self.CanAttack() == false) {
       return;
@@ -27,6 +27,12 @@ public partial class MeleeAttack : Node, IAttack {
 
     _timeSinceLastAttack = 0;
     _hitbox.Rotation = direction; // Needs to be before thread.sleep, very sketchy fix, otherwise collision detection will use old rotation value.
+    if (_animationNode is Node2D _node2D) {
+      _node2D.Rotation = direction;
+    }
+    else {
+      GD.Print("Animation is not a node 2d");
+    }
 
     await Task.Delay((int) (stats.StartDelay * 1000));
 
@@ -43,8 +49,7 @@ public partial class MeleeAttack : Node, IAttack {
   }
 
   async void TryAttackVoid(object sender, AttackEventArgs e) {
-    IAttack self = this;
-    await self.TryAttack(e.AttackDirection);
+    await TryAttack(e.AttackDirection);
   }
 
   public override void _EnterTree() {
@@ -89,5 +94,9 @@ public partial class MeleeAttack : Node, IAttack {
 
   public override void _Process(double delta) {
     _timeSinceLastAttack += (float) delta;
+
+    if (_animationNode is Node2D  && ((IAttack)this).IsAttacking() == false) {
+      ((Node2D)_animationNode).Rotation = input.GetLookDirection();
+    }
   }
 }

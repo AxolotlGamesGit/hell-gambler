@@ -33,6 +33,10 @@ public partial class BasicEnemyInput : Node, IMovementInput, IAttackInput {
     }
   }
 
+  float IAttackInput.GetLookDirection() {
+    return (float)VectorMath.GetRotationFromVector(_player.Position - parent.Position);
+  }
+
   async void TryAttack() {
     await Task.Delay((int)(attackDelaySeconds * 1000));
 
